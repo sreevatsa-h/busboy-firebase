@@ -54,7 +54,8 @@ module.exports = (req, res, next) => {
             try {
               fs.unlinkSync(filepath);
             } catch (error) {
-              reject(error);
+              console.log("Unlinking error, skipping unlink");
+              resolve();
             }
   
             resolve();
